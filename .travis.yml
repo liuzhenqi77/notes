@@ -7,6 +7,8 @@ cache:
     - node_modules
 node_js:
   - '8'
+before_install:
+  - npm i -g docusaurus-init
 script:
   - npm run publish-gh-pages
 branches:
