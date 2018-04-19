@@ -11,8 +11,8 @@ node_js:
 before_install:
   - npm i -g docusaurus-init
 script:
-  - cd website
-  - GIT_USER=liuzhenqi77&&USE_SSH=true&&npm run publish-gh-pages
+  - cd website && npm install
+  - GIT_USER=liuzhenqi77 && USE_SSH=true && npm run publish-gh-pages
 branches:
   only:
     # Change this to gh-pages if you're deploying using the gh-pages branch
