@@ -1,0 +1,15 @@
+# .travis.yml
+# This file should be at the root of your project
+language: node_js
+cache: 
+  directories:
+    - ~/.npm
+    - node_modules
+node_js:
+  - '8'
+script:
+  - npm run publish-gh-pages
+branches:
+  only:
+    # Change this to gh-pages if you're deploying using the gh-pages branch
+    - master
