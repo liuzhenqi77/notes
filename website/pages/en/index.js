@@ -80,9 +80,9 @@ class HomeSplash extends React.Component {
         <div className="inner">
           <ProjectTitle />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html', language)}>Example Link</Button>
-            <Button href={docUrl('doc2.html', language)}>Example Link 2</Button>
+            <Button href="about.html">GET STARTED</Button>
+            <Button href={docUrl('python-notes-intro.html', language)}>PYTHON</Button>
+            <Button href={docUrl('misc-notes-intro.html', language)}>OTHERS</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -103,16 +103,22 @@ const Features = props => (
   <Block layout="fourColumn">
     {[
       {
-        content: 'This is the content of my feature',
-        image: imgUrl('docusaurus.svg'),
+        content: 'Distilled from work',
+        image: imgUrl('py.png'),
         imageAlign: 'top',
-        title: 'Feature One',
+        title: 'Python Notes',
       },
       {
-        content: 'The content of my second feature',
-        image: imgUrl('docusaurus.svg'),
+        content: 'Everything once learnt',
+        image: imgUrl('brainstorm.png'),
         imageAlign: 'top',
-        title: 'Feature Two',
+        title: 'Miscellaneous Notes',
+      },
+      {
+        content: 'Updates and announcements',
+        image: imgUrl('blog.png'),
+        imageAlign: 'top',
+        title: 'Blog',
       },
     ]}
   </Block>
@@ -122,8 +128,8 @@ const FeatureCallout = props => (
   <div
     className="productShowcaseSection paddingBottom"
     style={{textAlign: 'center'}}>
-    <h2>Feature Callout</h2>
-    <MarkdownBlock>These are features of this project</MarkdownBlock>
+    <h2>Calling for more contents...</h2>
+    <MarkdownBlock>Please feel free to contact me or submit pull requests.</MarkdownBlock>
   </div>
 );
 
@@ -131,10 +137,10 @@ const LearnHow = props => (
   <Block background="light">
     {[
       {
-        content: 'Talk about learning how to use this',
-        image: imgUrl('docusaurus.svg'),
+        content: 'Use the documents/notes as quick references or cheatsheets.',
+        image: imgUrl('guide.png'),
         imageAlign: 'right',
-        title: 'Learn How',
+        title: 'How to use',
       },
     ]}
   </Block>
@@ -144,10 +150,10 @@ const TryOut = props => (
   <Block id="try">
     {[
       {
-        content: 'Talk about trying this out',
-        image: imgUrl('docusaurus.svg'),
+        content: 'Start by browsing the python doc or whatever you want.',
+        image: imgUrl('route.png'),
         imageAlign: 'left',
-        title: 'Try it Out',
+        title: 'Where to start',
       },
     ]}
   </Block>
@@ -157,44 +163,14 @@ const Description = props => (
   <Block background="dark">
     {[
       {
-        content: 'This is another description of how this project is useful',
-        image: imgUrl('docusaurus.svg'),
+        content: 'The docs come from personal experience.',
+        image: imgUrl('question.png'),
         imageAlign: 'right',
-        title: 'Description',
+        title: 'Why it works',
       },
     ]}
   </Block>
 );
-
-const Showcase = props => {
-  if ((siteConfig.users || []).length === 0) {
-    return null;
-  }
-  const showcase = siteConfig.users
-    .filter(user => {
-      return user.pinned;
-    })
-    .map((user, i) => {
-      return (
-        <a href={user.infoLink} key={i}>
-          <img src={user.image} alt={user.caption} title={user.caption} />
-        </a>
-      );
-    });
-
-  return (
-    <div className="productShowcaseSection paddingBottom">
-      <h2>{"Who's Using This?"}</h2>
-      <p>This project is used by all these people</p>
-      <div className="logos">{showcase}</div>
-      <div className="more-users">
-        <a className="button" href={pageUrl('users.html', props.language)}>
-          More {siteConfig.title} Users
-        </a>
-      </div>
-    </div>
-  );
-};
 
 class Index extends React.Component {
   render() {
@@ -209,7 +185,6 @@ class Index extends React.Component {
           <LearnHow />
           <TryOut />
           <Description />
-          <Showcase language={language} />
         </div>
       </div>
     );

@@ -1,5 +1,29 @@
 {
-  "docs": {
-    "Introduction": ["intro"]
+  "python": {
+    "Meta": ["python-notes-intro"],
+    "Elements": [
+      "installation",
+      "configuration",
+      "pycharm",
+      "conda"
+    ],
+    "Practices": [
+      "logging-recipe",
+      "profiling",
+      "decorator-by-timeit",
+      "deep-learning-misc",
+      "favorite-packages"
+    ]
+  },
+  "misc":{
+    "Meta": ["misc-notes-intro"],
+    "Technology": [
+      "shadowsocks",
+      "gitbook"
+    ],
+    "Academic":[
+      "research-patterns",
+      "research-coding-patterns"
+    ]
   }
 }

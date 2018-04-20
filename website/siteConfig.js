@@ -36,19 +36,21 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'intro', label: 'Python'},
-    {doc: 'intro', label: 'Misc'},
+    {page: 'about', label: 'About'},
+    {doc: 'python-notes-intro', label: 'Python'},
+    {doc: 'misc-notes-intro', label: 'Misc'},
     {page: 'help', label: 'Help'},
     {blog: true, label: 'Blog'},
+    {search: true},
   ],
 
   // If you have users set above, you add it here:
   // users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/docusaurus.svg',
-  footerIcon: 'img/docusaurus.svg',
-  favicon: 'img/favicon.png',
+  headerIcon: 'img/site_logo.png',
+  footerIcon: 'img/site_logo.png',
+  favicon: 'img/favicon.ico',
 
   /* colors for website */
   colors: {
@@ -86,12 +88,16 @@ const siteConfig = {
   onPageNav: 'separate',
 
   /* Open Graph and Twitter card images */
-  ogImage: 'img/docusaurus.png',
-  twitterImage: 'img/docusaurus.png',
+  ogImage: 'img/site_logo.png',
+  twitterImage: 'img/site_logo.png',
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   //   repoUrl: 'https://github.com/facebook/test-site',
+  algolia: {
+    apiKey: "909ae510286fdbac6fb8ab978f8bee3f",
+    indexName: "notes"
+  },
 };
 
 module.exports = siteConfig;
