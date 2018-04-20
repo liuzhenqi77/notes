@@ -95,8 +95,8 @@ const siteConfig = {
   // template. For example, if you need your repo's URL...
   //   repoUrl: 'https://github.com/facebook/test-site',
   algolia: {
-    apiKey: "909ae510286fdbac6fb8ab978f8bee3f",
-    indexName: "notes"
+    apiKey: "ad3d8facfd7f087ad2644a8f2e5685c8",
+    indexName: "echos_notes"
   },
 };
 
