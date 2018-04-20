@@ -9,16 +9,16 @@
         <generator>Feed for Node.js</generator>
         <image>
             <title>Echo&apos;s Notes Blog</title>
-            <url>https://liuzhenqi77.github.io/notes/img/docusaurus.svg</url>
+            <url>https://liuzhenqi77.github.io/notes/img/site_logo.png</url>
             <link>https://liuzhenqi77.github.io/notes/blog</link>
         </image>
         <copyright>Copyright © 2018 Zhen-Qi Liu</copyright>
         <item>
-            <title><![CDATA[Getting Started]]></title>
-            <link>https://liuzhenqi77.github.io/notes/blog/2018/04/19/intro.html</link>
-            <guid>https://liuzhenqi77.github.io/notes/blog/2018/04/19/intro.html</guid>
+            <title><![CDATA[Hello World]]></title>
+            <link>https://liuzhenqi77.github.io/notes/blog/2018/04/19/blog-intro.html</link>
+            <guid>https://liuzhenqi77.github.io/notes/blog/2018/04/19/blog-intro.html</guid>
             <pubDate>Thu, 19 Apr 2018 06:00:00 GMT</pubDate>
-            <description><![CDATA[<p>My <em>new content</em> here..</p>
+            <description><![CDATA[<p>Welcome to my new 'notes' website.</p>
 ]]></description>
         </item>
     </channel>

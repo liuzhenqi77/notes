@@ -6,15 +6,15 @@
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://liuzhenqi77.github.io/notes/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Echo&apos;s Notes news and events.</subtitle>
-    <logo>https://liuzhenqi77.github.io/notes/img/docusaurus.svg</logo>
+    <logo>https://liuzhenqi77.github.io/notes/img/site_logo.png</logo>
     <rights>Copyright © 2018 Zhen-Qi Liu</rights>
     <entry>
-        <title type="html"><![CDATA[Getting Started]]></title>
-        <id>https://liuzhenqi77.github.io/notes/blog/2018/04/19/intro.html</id>
-        <link href="https://liuzhenqi77.github.io/notes/blog/2018/04/19/intro.html">
+        <title type="html"><![CDATA[Hello World]]></title>
+        <id>https://liuzhenqi77.github.io/notes/blog/2018/04/19/blog-intro.html</id>
+        <link href="https://liuzhenqi77.github.io/notes/blog/2018/04/19/blog-intro.html">
         </link>
         <updated>2018-04-19T06:00:00Z</updated>
-        <summary type="html"><![CDATA[<p>My <em>new content</em> here..</p>
+        <summary type="html"><![CDATA[<p>Welcome to my new 'notes' website.</p>
 ]]></summary>
         <author>
         </author>
