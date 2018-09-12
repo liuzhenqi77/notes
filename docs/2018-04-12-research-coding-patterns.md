@@ -15,26 +15,22 @@ This article is always a work in progress and will be updated periodically.
 - trust your code
 - academic integrity
 
-## "Always Use Version Control"
+## "Practice Basic Project Management"
+
+### Always Use Version Control
 
 **When to commit?**
 
-- Commit at end of a working day.**(MUST)**
-- Commit at major feature updates.**(MUST)**
+- Commit at end of a working day. **(MUST)**
+- Commit at major feature updates. **(MUST)**
 - Learn to use branching.(Optional, as the nature of scientific computing)
 
 **Tips**
 
 - Use straight-forward and meaningful commit messages, like `Updated model selection`, `Added parameter grid search`, not `Major updates`, `Minor modifications`.
-- Avoid too-frequent commit, which will distract the clean timeline.
+- Avoid too-frequent commit, which will distract the commit history.
 
-## Practice Basic Project Management
-
-Keep raw copy of important data before modifying.
-
-```bash
-
-```
+### File management
 
 Make a folder organized by projects.
 
@@ -43,6 +39,12 @@ Projects
 |-- Project_Name_1
 |-- Project_Name_2
 `-- Project_Name_3
+```
+
+Keep raw copy of important data before modifying.
+
+```bash
+
 ```
 
 ## "A Well-Structured Project Saves Time"
@@ -125,9 +127,24 @@ Project_Name
 
 For many, debugging may be a especially painful process.
 
-See [Logging Recipe](https://liuzhenqi77.gitbooks.io/python-notes/content/practice/logging-recipe.html) for detailed configurations of Python's logging module.
+See [Logging Recipe](2018-03-28-logging-recipe.md) for detailed configurations of Python's logging module.
 
 ### Setup (auto-)saving
+
+When doing a specific task, the output data and figures can be in rapid iteration and the situation quickly becomes overwhelming.
+
+```python
+import time
+time_str = time.strftime("%Y%m%d_%H%M%S")
+print(f'file_name_{time_str:}')
+```
+
+```
+Figs
+|-- code_1_20180412_041115.png
+|-- code_1_20180412_041546.png
+`-- code_1_20180412_051235.png
+```
 
 **Setup checkpoints**
 
@@ -137,9 +154,9 @@ See [Logging Recipe](https://liuzhenqi77.gitbooks.io/python-notes/content/practi
 
 ## "Coding Practical Guidelines"
 
-**Refactor at any point**
+### Refactor at any point
 
-**Be easy to iterate (sweep options)**
+### Be easy to iterate (sweep options)
 
 Suppose we are doing a task involving multiple parameters with a expansion of range. The following function provides no options for iteration. More oftenly, we need a explicit interface for iterate through the parameters. Like, we wanted to plot a surface in 3 dimentions, which involves generating a 2d array.
 
@@ -156,7 +173,7 @@ def run():
 
 ```python
 # better (support default parameter)
-def run(x=2, y=2):
+def run(param_1=1, param_2='adam'):
     # do something with x and y
     print(f'{param_1:} -> {param_2:}')
 
@@ -173,13 +190,41 @@ for param_1, param_2 in product(param_1s, param_2s)
     run(param_1, param_2)
 ```
 
+A practical one using sklearn (I used this in my thesis project).
+
+```python
+from sklearn.model_selection import ParameterGrid
+param_grid = {
+    'c_e': [0.1, 0.2, 0.3],
+    'call_back_time': [-140],
+    'input_coeff': [0.5],
+    'neuron_sqrt_num':[20]
+    }
+grid = ParameterGrid(param_grid)
+results = []
+# start iterating the parameter grid
+for params in grid:
+    result = run(params['c_e'],
+                 params['call_back_time'],
+                 params['input_coeff'],
+                 params['neuron_sqrt_num'])
+    results.append(result)
+# saving results
+time_str = time.strftime("%Y%m%d_%H%M%S")
+with open(f'outputs/code_1_{time_str:}.pickle', 'wb') as f:
+    pickle.dump([grid, results], f, protocol=-1)
+logger.info('Save success')
+```
+
 A more advanced paradigm (Modified from [Ref 3](#references))
 
 ### Run only a subset of your code
 
 ### Seperate computation from drawing
 
-## "Snippets of Your Utility Code"
+### Memory management
+
+### Snippets of your utility code
 
 ## "Keep Detailed Experiment Notes (Journals)"
 
@@ -187,14 +232,6 @@ A more advanced paradigm (Modified from [Ref 3](#references))
 ##########
 #  0326  #
 ##########
-===
-状态：完成
-任务：作 levina 模型的 powerlaw 图
-意义：验证 SOC 条件下 powerlaw 结果很好，而另外两个模型没有如此特性(需要细调)
-数据：figs/levina_1_powerlaw_*
-代码：levina_1.py
-备注：~=1.5
-===
 ===
 状态：完成
 任务：作 izhi 模型关于参数 I 系数的 DFA alpha 曲面图
@@ -218,21 +255,6 @@ A more advanced paradigm (Modified from [Ref 3](#references))
 4.  目前分类结果 2 bit 最好达到 0.5，但明显受最后一个发放的影响
 5.  最好结果分类效果不显著
 ===
-```
-
-When doing a specific task, the output data and figures can be in rapid iteration and the situation quickly becomes overwhelming.
-
-```python
-import time
-time_str = time.strftime("%Y%m%d_%H%M%S")
-print(f'file_name_{time_str:}')
-```
-
-```
-Figs
-|-- code_1_20180412_041115.png
-|-- code_1_20180412_041546.png
-`-- code_1_20180412_051235.png
 ```
 
 Keep a hand-written or text file to track different settings/groups.

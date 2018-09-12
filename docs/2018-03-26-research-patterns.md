@@ -14,11 +14,29 @@ This article is always a work in progress and will be updated periodically.
 
 ## Reference Management
 
+- Zotero
+- Mandeley
+
 ## Document Formatting
+
+- TeX/LaTeX
 
 ## Presentation Tools
 
-## Files and Directories
+- MS Powerpoint/Keynote
+- JS-based libraries
+- Markdown
+- Prezi
+
+## System Utilities
+
+### Local
+
+- Cmder
+
+### Server
+
+- MobaXterm
 
 ## Version Control
 

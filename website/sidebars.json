@@ -1,29 +1,39 @@
 {
   "python": {
-    "Meta": ["python-notes-intro"],
-    "Elements": [
-      "installation",
-      "configuration",
-      "pycharm",
-      "conda"
-    ],
+    "Meta": ["python-notes-intro"],   
     "Practices": [
       "logging-recipe",
       "profiling",
       "decorator-by-timeit",
-      "deep-learning-misc",
+      "multiprocessing",
+      "deep-learning-misc"
+    ],
+    "Utilities": [
+      "pycharm",
+      "conda",
       "favorite-packages"
+    ],
+    "Projects": [
+      "interact-with-phone"
+    ],
+    "System": [
+      "bash-basics",
+      "docker-basics"
     ]
   },
   "misc":{
     "Meta": ["misc-notes-intro"],
     "Technology": [
       "shadowsocks",
-      "gitbook"
+      "gitbook",
+      "docusaurus-basics"
     ],
     "Academic":[
       "research-patterns",
       "research-coding-patterns"
+    ],
+    "Others":[
+      "anxiety-meds"
     ]
   }
 }
