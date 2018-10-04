@@ -18,3 +18,5 @@ docker exec -it C_NAME bash
 docker rm C_NAME
 
 ```
+
+*TODO: learn to write docker files*
