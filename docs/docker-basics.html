@@ -25,15 +25,31 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Docker Basics</h1></header><article><div><span><pre><code class="hljs css language-bash"><span class="hljs-comment"># I_NAME for image name</span>
-<span class="hljs-comment"># C_NAME for container name</span>
-
-docker image list --all
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Docker Basics</h1></header><article><div><span><pre><code class="hljs css language-bash">docker image list --all
 docker container list --all
-docker run -it I_NAME
-docker start C_NAME
-docker <span class="hljs-built_in">exec</span> -it C_NAME bash
-docker rm C_NAME
+
+docker rmi [image]
+docker rm [container]
+
+docker image prune
+docker container prune
+
+docker system df
+
+docker run -it 
+
+docker build -t [tag] -f [dockerfile] .
+
+docker run busybox nslookup google.com
+
+nvidia-docker run -it -p 8888:8888 --ipc=host ufoym/deepo:all-jupyter-py36 jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --NotebookApp.token= --notebook-dir=<span class="hljs-string">'/root'</span>
+
+nvidia-docker run -it -p 8889:8888 -v ~/Documents/docker-sharedfolder:/root --ipc=host ufoym/deepo:all-py36-jupyter jupyter notebook --no-browser --ip=0.0.0.0 --allow-root --notebook-dir=<span class="hljs-string">'/root'</span>
+
+sudo vi /etc/docker/daemon.json
+
+sudo systemctl daemon-reload
+sudo service docker restart
 
 </code></pre>
 <p><em>TODO: learn to write docker files</em></p>
