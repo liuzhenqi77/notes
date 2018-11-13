@@ -6,4 +6,4 @@ author: Zhen-Qi Liu
 authorURL: http://echoliu.me
 ---
 
-This gitbook is a quick reference for python configuration and basic practices. Currently maintained by Zhenqi Liu, 2018.
+This gitbook is a quick reference for python configuration and basic practices, also including common utilities used. Currently maintained by Zhenqi Liu, 2018.

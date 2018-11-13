@@ -34,3 +34,5 @@ sudo systemctl daemon-reload
 sudo service docker restart
 
 ```
+
+*TODO: learn to write docker files*
