@@ -61,9 +61,14 @@ logger.error()
 logger.critical()
 ```
 
-### Utility code
+### A battery-included sample logger configuration
 
 ```python
+# put the next line in code files to use logger
+logger = configure_logger(__name__, 'my_logger.log')
+
+
+# setup the logger using the following scripts
 class word_filter(logging.Filter):
     """
     This is a auxillary class for function configure_logger()

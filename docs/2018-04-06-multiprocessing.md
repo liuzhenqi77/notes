@@ -6,6 +6,36 @@ author: Zhen-Qi Liu
 authorURL: http://echoliu.me
 ---
 
+## A battery-included function for multiprocessing
+
+```python
+def run_mp(part_func, param_list):
+    """
+
+    :param part_func:
+    use partial to generate a partial function with only one parameter
+    > from functools import partial
+    > foo_p = partial(foo, all_params_except_one=default)
+    :param param_list:
+    list of variable parameter in the partial function
+    :return: results
+    if labelled result is desired, return a tuple containing the input
+    """
+    import gc
+    import multiprocessing as mp
+    gc.collect()
+    t1 = time.time()
+
+    # logger.info(f'Starting pool')
+    pool = mp.Pool(int(mp.cpu_count()))
+    ret = pool.map(part_func, param_list)
+    pool.close()
+
+    t2 = time.time()
+    # logger.info(f'Runs in {t2-t1:.2f}s')
+    return ret
+```
+
 ## Random.random() not safe
 
 Be careful with any simulation that involves random initialization.
@@ -76,7 +106,6 @@ Here is this workaround that I use, in which I use system random for seeding loc
 reseed = int.from_bytes(os.urandom(1), byteorder='little')
 local_random_state = np.random.mtrand.RandomState(reseed)
 ```
-
 
 ## References
 
